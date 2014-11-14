@@ -8,10 +8,19 @@
 
 /* === Breakpoint Mixin === */
 @mixin breakpoint($point) {
-   @if $point == medium {
-        @media (max-width: 980px) { @content; }
+    @if $point == large {
+        @media (min-width: 981px) {
+            @content;
+        }
+    }
+    @if $point == medium {
+        @media (max-width: 980px) and (min-width: 721px) {
+            @content;
+        }
     }
     @else if $point == small {
-        @media (max-width 720px) { @content; }
+        @media (max-width: 720px) {
+            @content;
+        }
     }
 }

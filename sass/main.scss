@@ -6,17 +6,16 @@
  * @package sass-test
  */
 
-/* === Vendor SCSS === */
+/* === Vendor Dependencies SCSS === */
 @import 'vendor/grid';
 
-/* === Mixins SCSS === */
-@import 'modules/breakpoints';
-
-/* === Config Modules SCSS === */
+/* === Authored Dependencies SCSS === */
 @import 'modules/vars';
 @import 'modules/colors';
 @import 'modules/defaults';
 
+/* === Patterns SCSS === */
+@import 'modules/breakpoints';
+
 /* === Partials SCSS === */
 @import 'partials/grid';
-

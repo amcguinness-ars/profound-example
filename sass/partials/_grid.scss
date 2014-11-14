@@ -6,8 +6,8 @@
  * @package sass-test
  */
 
-/* === Container Styles === */
-.row {
+/* === Row Styles === */
+.#{$class_row} {
     @include container;
     margin: 0 auto;
     margin-bottom: $gutter_width;
@@ -46,70 +46,42 @@ article div {
 
 @include breakpoint(medium) {
     /* Container Overrides */
-    .row {
+    .#{$class_row} {
         float: left;
         height: auto;
     }
 
     /* Generic Column Styles */
-    .col1,
-    .col2 {
-        @include column(2);
-    }
-    .col3,
-    .col4 {
-        @include column(4);
-    }
-    .col5,
-    .col6 {
-        @include column(6);
-    }
-    .col7,
-    .col8 {
-        @include column(8);
-    }
-    .col9,
-    .col10 {
-        @include column(10);
-    }
-    .col11,
-    .col12 {
-        @include column(12);
-    }
+    @for $i from 1 through 12 {
+        .#{$class_column}#{$i},
+        .#{$class_column}#{$i + 1} {
+            @if ($i % 2 != 0) {
+                @include column($i + 1);
+            }
+            @else {
+                @include column($i);
+            }
+        }
 
-    /* Generic Push Styles */
-    .push1,
-    .push2 {
-        @include push(2); 
-    }
-    .push3,
-    .push4 {
-        @include push(4);
-    }
-    .push5,
-    .push6 {
-        @include push(6);
-    }
-    .push7,
-    .push8 {
-        @include push(8);
-    }
-    .push9,
-    .push10 {
-        @include push(10);
-    }
-    .push11 {
-        @include push(12)
+        .#{$class_push}#{$i},
+        .#{$class_push}#{$i + 1} {
+            @if ($i % 2 != 0) {
+                @include push($i + 1);
+            }
+            @else {
+                @include push($i);
+            }
+        }
     }
 
     /* Specific Situations */
     @for $i from 0 through 7 {
-        .col1:nth-child(#{$i}) {
+        .#{$class_column}1:nth-child(#{$i}) {
             @include push(2 * ($i - 1));
         }
     }
     @for $i from 0 through 7 {
-        .col1:nth-child(#{7 + $i}) {
+        .#{$class_column}1:nth-child(#{7 + $i}) {
             @include push(2 * $i);
             @if ($i == 0) {
                 clear: both;
@@ -118,10 +90,10 @@ article div {
         }
     } 
     
-    .col3:nth-child(3) {
+    .#{$class_column}3:nth-child(3) {
         @include push(8);
     }
-    .col3:nth-child(4) {
+    .#{$class_column}3:nth-child(4) {
         @include column(12);
         @include push(0);
         clear: both;
@@ -130,7 +102,7 @@ article div {
 }
 @include breakpoint(small) {
     /* Specific Container Styles */
-    .row {
+    .#{$class_row} {
         float: left;
         height: auto;
         margin-bottom: 0;
@@ -138,12 +110,12 @@ article div {
 
     /* All Column and Push Styles */
     @for $i from 0 through 13 {
-        .col#{$i} {
+        .#{$class_column}#{$i} {
             @include column(12);
             clear: both;
             margin-top: $gutter_width;
         }
-        .push#{$i} {
+        .#{$class_push}#{$i} {
             @include push(0);
         }
     }

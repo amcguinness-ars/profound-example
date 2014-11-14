@@ -7,9 +7,6 @@
 # ** All Vim Files **
 *.swp
 
-# ** Everthing in the CSS Directory **
-css/*
-
 # ** All of the Project Dependencies **
 node_modules/
 

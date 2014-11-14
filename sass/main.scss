@@ -1,0 +1,22 @@
+/*
+ * File: main.scss
+ * Description: Sets specific container styles, then generates the grid classes
+ * Dependenceies: Profound Grid
+ * 
+ * @package sass-test
+ */
+
+/* === Vendor SCSS === */
+@import 'vendor/grid';
+
+/* === Mixins SCSS === */
+@import 'modules/breakpoints';
+
+/* === Config Modules SCSS === */
+@import 'modules/vars';
+@import 'modules/colors';
+@import 'modules/defaults';
+
+/* === Partials SCSS === */
+@import 'partials/grid';
+

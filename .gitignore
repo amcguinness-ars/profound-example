@@ -1,0 +1,20 @@
+# File: .gitignore
+# Description: Ignores certain files within this directory
+# Dependencies: None
+#
+# @package sass-test
+
+# ** All Vim Files **
+*.swp
+
+# ** Everthing in the CSS Directory **
+css/*
+
+# ** All of the Project Dependencies **
+node_modules/
+
+# ** Sass History **
+.sass-cache/
+
+# ** Mac Files **
+.DS_Store

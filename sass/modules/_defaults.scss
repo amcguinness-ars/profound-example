@@ -1,0 +1,22 @@
+/*
+ * Filename: _defaults.scss
+ * Description: Contains default styles
+ * Dependencies: None
+ *
+ * @package sass-test
+ */
+
+/* === General Defaults === */
+* {
+    box-sizing: border-box;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+html {
+    font-size: 10px;
+}
+body {
+    font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
+    background: #fff;
+    color: #444;
+}

@@ -1,0 +1,17 @@
+/*
+ * File: _breakpoints.scss
+ * Description: Contains the named breakpoints for the grid
+ * Dependencies: None
+ *
+ * @package sass-test
+ */
+
+/* === Breakpoint Mixin === */
+@mixin breakpoint($point) {
+   @if $point == medium {
+        @media (max-width: 980px) { @content; }
+    }
+    @else if $point == small {
+        @media (max-width 720px) { @content; }
+    }
+}

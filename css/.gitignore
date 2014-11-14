@@ -1,0 +1,8 @@
+# File: css/.gitignore
+# Description: Ignore all files in this directory committed
+# Dependencies: None
+#
+# @package sass-test
+
+# ** All Files in Directory **
+*.css
